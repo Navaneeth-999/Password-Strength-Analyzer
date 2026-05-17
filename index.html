@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Password Strength Analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Password Strength Analyzer</h1>
+
+        <form method="POST">
+
+            <input type="password" name="password" placeholder="Enter Password" required>
+
+            <button type="submit">Check Strength</button>
+
+        </form>
+
+        {% if result %}
+
+            <h2 style="color: {{ color }};">
+    {{ result }}
+</h2>
+
+        {% endif %}
+
+        {% if suggestion %}
+
+            <p>Suggested Strong Password:</p>
+
+            <h3>{{ suggestion }}</h3>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
